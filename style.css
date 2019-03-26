@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #000;
+}
+
+.wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.glitch {
+    align-self: center;
+    position: relative;
+    font-size: 180px;
+    font-family: arial, sans-serif;
+    color: white;
+    filter: blur(4px);
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-name);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+}
+
+.glitch::before {
+    left: 8px;
+    text-shadow: -3px 0px red;
+    background: #000;
+    animation: glitchAnime1 2s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+    left: -10px;
+    text-shadow: -3px 0px blue;
+    background: #000;
+    animation: glitchAnime2 1.5s infinite linear alternate-reverse;
+}
+
+@keyframes glitchAnime1 {
+
+    0% {
+        clip: rect(0px 510px 70px 0);
+    }
+
+    20% {
+        clip: rect(90px 510px 60px 0px);
+    }
+
+    40% {
+        clip: rect(90px 510px 60px 0);
+    }
+
+    60% {
+        clip: rect(85px 510px 115px 0);
+    }
+
+    80% {
+        clip: rect(120px 510px 90px 0px);
+    }
+
+    100% {
+        clip: rect(150px 510px 190px 0);
+    }
+
+}
+
+@keyframes glitchAnime2 {
+
+    0% {
+        clip: rect(60px 510px 32px 0px);
+    }
+
+    20% {
+        clip: rect(80px 510px 65px 0);
+    }
+
+    40% {
+        clip: rect(70px 510px 82px 0);
+    }
+
+    60% {
+        clip: rect(90px 510px 75px 0px);
+    }
+
+    80% {
+        clip: rect(95px 510px 74px 0px);
+    }
+
+    100% {
+        clip: rect(150px 510px 167px 0);
+    }
+
+}
